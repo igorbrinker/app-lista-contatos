@@ -1,5 +1,5 @@
 import React, { useState, useContext } from 'react';
-import { View, TextInput, Button, FlatList, Text, StyleSheet } from 'react-native'; // Import FlatList and Text
+import { View, TextInput, TouchableOpacity, Text, StyleSheet } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useUserContext } from './UserContext';
 
@@ -52,24 +52,40 @@ const UserForm = () => {
                 value={userData.avatarUrl}
                 onChangeText={(avatarUrl) => setUserData({ ...userData, avatarUrl })}
             />
-            <Button title="Submit" onPress={handleSubmit} />
+            <TouchableOpacity style={styles.roundButton} onPress={handleSubmit}>
+              <Text style={styles.buttonText}>Adicionar Contato</Text>
+            </TouchableOpacity>
         </View>
     );
 };
 
 const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        justifyContent: 'center',
-        padding: 20,
-    },
-    input: {
-        height: 40,
-        borderColor: 'gray',
-        borderWidth: 1,
-        marginBottom: 20,
-        paddingHorizontal: 10,
-    },
+  container: {
+      flex: 1,
+      justifyContent: 'center',
+      padding: 20,
+  },
+  input: {
+      height: 40,
+      borderColor: 'gray',
+      borderWidth: 1,
+      marginBottom: 20,
+      paddingHorizontal: 10,
+      borderRadius: 20,
+  },
+  roundButton: {
+      height: 50,
+      justifyContent: 'center',
+      alignItems: 'center',
+      padding: 10,
+      borderRadius: 25,
+      backgroundColor: '#007AFF',
+      marginTop: 20,
+  },
+  buttonText: {
+      color: 'white',
+      fontSize: 16,
+  },
 });
 
 export default UserForm;

@@ -44,13 +44,7 @@ export default function Information({ route, navigation }) {
                 <FontAwesome name='trash' size={23} color='#fff' />
                 <Text style={styles.buttonText}>Apagar Contato</Text>
             </TouchableOpacity>
-            <TouchableOpacity
-                style={styles.button}
-                onPress={() => navigation.goBack()}
-            >
-                <FontAwesome name='arrow-left' size={23} color='#fff' />
-                <Text style={styles.buttonText}>Voltar</Text>
-            </TouchableOpacity>
+
         </ScrollView>
     );
 }
@@ -58,11 +52,11 @@ export default function Information({ route, navigation }) {
 const roundButtonStyles = {
     roundButton: {
         borderRadius: 50,
-        paddingVertical: 10,
-        paddingHorizontal: 90,
+        paddingVertical: 20,
+        paddingHorizontal: 100,
         backgroundColor: 'red',
         alignSelf: 'center',
-        marginTop: 20,
+        marginTop: 30,
         flexDirection: 'row',
         alignItems: 'center',
     },
